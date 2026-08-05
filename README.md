@@ -107,7 +107,7 @@ Removed the NAT Gateway route and created a new default route:
 This enabled direct internet connectivity for resources inside the public subnet.
 <br/><br/>
 
-<img src="INSERT_SCREENSHOT_HERE" height="80%" width="80%" alt="Internet Gateway Route"/>
+<img width="763" height="505" alt="Screenshot 2026-08-04 at 9 55 43 PM" src="https://github.com/user-attachments/assets/631df0c2-2e19-4f2e-8d1f-f92505674e3d" />
 
 <br/><br/>
 
