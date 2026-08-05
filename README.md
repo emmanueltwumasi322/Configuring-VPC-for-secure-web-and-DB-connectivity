@@ -155,7 +155,7 @@ Copied the Web Server's public IP address and opened it using HTTP.
 The webpage loaded successfully, confirming that internet access had been restored through the Internet Gateway.
 <br/><br/>
 
-<img src="INSERT_SCREENSHOT_HERE" height="80%" width="80%" alt="Working Website"/>
+<img width="1220" height="660" alt="Screenshot 2026-08-04 at 8 45 31 PM" src="https://github.com/user-attachments/assets/63647943-9d60-4823-9e55-1b91082b20e3" />
 
 <br/><br/>
 
