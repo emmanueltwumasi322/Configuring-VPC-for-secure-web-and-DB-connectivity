@@ -63,11 +63,11 @@ To resolve these issues, I updated the VPC route tables, configured an Internet 
 
 <p align="center">
 
-<b>Step 1: Launch the lab environment and open the Amazon EC2 Console.</b><br/>
+<b>Step 1: Open AWS Console.</b><br/>
 Verified the AWS Region was set to <b>US East (N. Virginia)</b> and opened the EC2 service from the AWS Console.
 <br/><br/>
 
-<img src="INSERT_SCREENSHOT_HERE" height="80%" width="80%" alt="AWS EC2 Console"/>
+
 
 <br/><br/>
 
