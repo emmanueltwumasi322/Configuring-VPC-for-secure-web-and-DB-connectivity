@@ -93,7 +93,7 @@ Opened the Route Table associated with the Web Server subnet and reviewed the ex
 The subnet was configured to send internet traffic through a NAT Gateway instead of an Internet Gateway.
 <br/><br/>
 
-<img src="INSERT_SCREENSHOT_HERE" height="80%" width="80%" alt="Route Table"/>
+<img width="944" height="647" alt="Screenshot 2026-08-04 at 9 48 53 PM" src="https://github.com/user-attachments/assets/6132787a-16e6-4780-b65a-897714e435b6" />
 
 <br/><br/>
 
