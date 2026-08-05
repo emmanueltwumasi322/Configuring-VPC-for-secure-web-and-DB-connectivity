@@ -83,7 +83,8 @@ Copied the Web Server's public IPv4 address and opened it in a browser. The webp
 Verified the instance networking information including its Public IPv4 Address, Private IPv4 Address, and associated subnet.
 <br/><br/>
 
-<img src="INSERT_SCREENSHOT_HERE" height="80%" width="80%" alt="EC2 Networking"/>
+<img width="658" height="347" alt="Screenshot 2026-08-04 at 9 27 57 PM" src="https://github.com/user-attachments/assets/e1b4fc28-5f71-4430-a499-a0ecda18492b" />
+ 
 
 <br/><br/>
 
