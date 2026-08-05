@@ -33,8 +33,7 @@ To resolve these issues, I updated the VPC route tables, configured an Internet 
 
 <h2>Environments Used</h2>
 
-- <b>AWS Cloud</b>
-- <b>Amazon EC2 Console</b>
+- <b>AWS Console</b>
 
 <h2>Project Objectives</h2>
 
