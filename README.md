@@ -12,7 +12,6 @@ The environment initially experienced networking issue:
 To resolve these issues, I updated the VPC route tables, configured an Internet Gateway, and modified Security Group rules. The final architecture follows AWS networking best practices by allowing internet access only to the public web server.
 
 <br />
-
 <h2>Architecture Overview</h2>
 
 <ul>
@@ -61,16 +60,11 @@ To resolve these issues, I updated the VPC route tables, configured an Internet 
 <b>Step 1: Open AWS Console.</b><br/>
 Verified the AWS Region was set to <b>US East (N. Virginia)</b> and opened the EC2 service from the AWS Console.
 <br/><br/>
-
-
-
 <br/><br/>
 
 <b>Step 2: Test the Web Server.</b><br/>
 Copied the Web Server's public IPv4 address and opened it in a browser. The webpage timed out, confirming the server could not be reached from the internet.
 <br/><br/>
-
-
 <br/><br/>
 
 <b>Step 3: Review the Web Server Networking Configuration.</b><br/>
@@ -81,14 +75,11 @@ Verified the instance networking information including its Public IPv4 Address, 
  
 
 <br/><br/>
-
 <b>Step 4: Inspect the Route Table.</b><br/>
 Opened the Route Table associated with the Web Server subnet and reviewed the existing routes.
 The subnet was configured to send internet traffic through a NAT Gateway instead of an Internet Gateway.
 <br/><br/>
-
 <img width="944" height="647" alt="Screenshot 2026-08-04 at 9 48 53 PM" src="https://github.com/user-attachments/assets/6132787a-16e6-4780-b65a-897714e435b6" />
-
 <br/><br/>
 
 <b>Step 5: Replace the NAT Gateway Route.</b><br/>
@@ -108,9 +99,7 @@ This enabled direct internet connectivity for resources inside the public subnet
 <b>Step 6: Verify Internet Gateway Association.</b><br/>
 Confirmed the Route Table now forwards internet traffic through the Internet Gateway.
 <br/><br/>
-
 <br/><br/>
-
 <b>Step 7: Configure Web Server Security Group.</b><br/>
 Opened the Web Server Security Group and modified the inbound rules.
 Added an HTTP rule:
@@ -135,27 +124,20 @@ Reviewed the outbound rules and added an additional rule allowing:
 
 This allows the web server to communicate with external services when required.
 <br/><br/>
-
 <br/><br/>
-
 <b>Step 9: Test Internet Connectivity.</b><br/>
 Copied the Web Server's public IP address and opened it using HTTP.
 
 The webpage loaded successfully, confirming that internet access had been restored through the Internet Gateway.
 <br/><br/>
-
 <br/><br/>
-
 <b>Step 10: Verify Database Connectivity.</b><br/>
 The application diagram showed:
 <ul>
 <li>Internet → Web Server: <b>Successful</b></li>
 </ul>
-
 <br/><br/>
-
 <br/><br/>
-
 <h2>Security Improvements</h2>
 
 <ul>
