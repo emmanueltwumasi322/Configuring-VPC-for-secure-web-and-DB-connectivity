@@ -2,15 +2,14 @@
 
 <h2>Description</h2>
 
-This project demonstrates how I configured networking components within an Amazon Virtual Private Cloud (VPC) to restore secure connectivity between a public web server and a private database server.
+This project demonstrates how I configured networking components within an Amazon Virtual Private Cloud (VPC) to restore secure connectivity with a public web server.
 
-The environment initially experienced two networking issues:
+The environment initially experienced networking issue:
 <ul>
   <li>The Amazon EC2 web server could not be reached from the internet.</li>
-  <li>The private database server could not securely communicate with the web server.</li>
 </ul>
 
-To resolve these issues, I updated the VPC route tables, configured an Internet Gateway, and modified Security Group rules. The final architecture follows AWS networking best practices by allowing internet access only to the public web server while keeping the database isolated inside a private subnet.
+To resolve these issues, I updated the VPC route tables, configured an Internet Gateway, and modified Security Group rules. The final architecture follows AWS networking best practices by allowing internet access only to the public web server.
 
 <br />
 
@@ -19,7 +18,6 @@ To resolve these issues, I updated the VPC route tables, configured an Internet 
 <ul>
 <li><b>Amazon VPC</b> providing network isolation</li>
 <li><b>Public Subnet</b> hosting the web server with a public IPv4 address</li>
-<li><b>Private Subnet</b> hosting the database server</li>
 <li><b>Internet Gateway (IGW)</b> providing internet connectivity to the public subnet</li>
 <li><b>Route Tables</b> directing internet-bound traffic</li>
 <li><b>Security Groups</b> controlling inbound and outbound traffic</li>
@@ -53,10 +51,7 @@ To resolve these issues, I updated the VPC route tables, configured an Internet 
 
 <ul>
 <li>Web Server deployed inside a <b>Public Subnet</b>.</li>
-<li>Database Server deployed inside a <b>Private Subnet</b>.</li>
 <li>Only the Public Subnet routes traffic through the Internet Gateway.</li>
-<li>The database remains inaccessible directly from the internet.</li>
-<li>The Web Server communicates with the Database over MySQL (Port 3306).</li>
 </ul>
 
 <h2>Walk-through</h2>
@@ -75,7 +70,6 @@ Verified the AWS Region was set to <b>US East (N. Virginia)</b> and opened the E
 Copied the Web Server's public IPv4 address and opened it in a browser. The webpage timed out, confirming the server could not be reached from the internet.
 <br/><br/>
 
-<img src="INSERT_SCREENSHOT_HERE" height="80%" width="80%" alt="Website Timeout"/>
 
 <br/><br/>
 
@@ -115,8 +109,6 @@ This enabled direct internet connectivity for resources inside the public subnet
 Confirmed the Route Table now forwards internet traffic through the Internet Gateway.
 <br/><br/>
 
-<img src="INSERT_SCREENSHOT_HERE" height="80%" width="80%" alt="Updated Route Table"/>
-
 <br/><br/>
 
 <b>Step 7: Configure Web Server Security Group.</b><br/>
@@ -125,7 +117,6 @@ Added an HTTP rule:
 <ul>
 <li>Protocol: HTTP</li>
 <li>Port: 80</li>
-<li>Source: Anywhere (IPv4)</li>
 </ul>
 
 This allows users to access the web server from the internet.
@@ -145,8 +136,6 @@ Reviewed the outbound rules and added an additional rule allowing:
 This allows the web server to communicate with external services when required.
 <br/><br/>
 
-<img src="INSERT_SCREENSHOT_HERE" height="80%" width="80%" alt="Outbound Rules"/>
-
 <br/><br/>
 
 <b>Step 9: Test Internet Connectivity.</b><br/>
@@ -155,21 +144,15 @@ Copied the Web Server's public IP address and opened it using HTTP.
 The webpage loaded successfully, confirming that internet access had been restored through the Internet Gateway.
 <br/><br/>
 
-<img width="1220" height="660" alt="Screenshot 2026-08-04 at 8 45 31 PM" src="https://github.com/user-attachments/assets/63647943-9d60-4823-9e55-1b91082b20e3" />
-
 <br/><br/>
 
 <b>Step 10: Verify Database Connectivity.</b><br/>
 The application diagram showed:
 <ul>
 <li>Internet → Web Server: <b>Successful</b></li>
-<li>Web Server → Database Server: <b>Failed</b></li>
 </ul>
 
-This is expected because the Database Security Group still needs an inbound MySQL (Port 3306) rule allowing traffic only from the Web Server Security Group.
 <br/><br/>
-
-<img src="INSERT_SCREENSHOT_HERE" height="80%" width="80%" alt="Database Connectivity"/>
 
 <br/><br/>
 
@@ -179,13 +162,11 @@ This is expected because the Database Security Group still needs an inbound MySQ
 <li>Configured an Internet Gateway for the public subnet.</li>
 <li>Updated Route Tables to direct internet traffic appropriately.</li>
 <li>Allowed inbound HTTP traffic only on Port 80.</li>
-<li>Restricted database placement to a private subnet.</li>
-<li>Prepared the environment for secure MySQL communication over Port 3306.</li>
 </ul>
 
 <h2>Lessons Learned</h2>
 
-During this lab, I gained hands-on experience configuring core AWS networking components within an Amazon VPC. I learned how Route Tables determine network traffic flow, how Internet Gateways provide internet access to public resources, and how Security Groups act as virtual firewalls controlling inbound and outbound traffic. I also reinforced the AWS best practice of isolating databases inside private subnets while exposing only necessary public-facing resources such as web servers.
+During this lab, I gained hands-on experience configuring core AWS networking components within an Amazon VPC. I learned how Route Tables determine network traffic flow, how Internet Gateways provide internet access to public resources, and how Security Groups act as virtual firewalls controlling inbound and outbound traffic.
 
 <h2>Skills Demonstrated</h2>
 
@@ -197,5 +178,4 @@ During this lab, I gained hands-on experience configuring core AWS networking co
 <li>Security Group Administration</li>
 <li>AWS Networking</li>
 <li>Cloud Infrastructure Troubleshooting</li>
-<li>Public and Private Subnet Architecture</li>
 </ul>
