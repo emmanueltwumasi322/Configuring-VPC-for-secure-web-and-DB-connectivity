@@ -131,7 +131,7 @@ Added an HTTP rule:
 This allows users to access the web server from the internet.
 <br/><br/>
 
-<img src="INSERT_SCREENSHOT_HERE" height="80%" width="80%" alt="Inbound HTTP Rule"/>
+<img width="945" height="473" alt="Screenshot 2026-08-04 at 10 06 06 PM" src="https://github.com/user-attachments/assets/ac7cfba6-0600-4709-9d73-4247d560d39a" />
 
 <br/><br/>
 
