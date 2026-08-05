@@ -127,7 +127,6 @@ This allows the web server to communicate with external services when required.
 <br/><br/>
 <b>Step 9: Test Internet Connectivity.</b><br/>
 Copied the Web Server's public IP address and opened it using HTTP.
-
 The webpage loaded successfully, confirming that internet access had been restored through the Internet Gateway.
 <br/><br/>
 <br/><br/>
@@ -139,19 +138,14 @@ The application diagram showed:
 <br/><br/>
 <br/><br/>
 <h2>Security Improvements</h2>
-
 <ul>
 <li>Configured an Internet Gateway for the public subnet.</li>
 <li>Updated Route Tables to direct internet traffic appropriately.</li>
 <li>Allowed inbound HTTP traffic only on Port 80.</li>
 </ul>
-
 <h2>Lessons Learned</h2>
-
 During this lab, I gained hands-on experience configuring core AWS networking components within an Amazon VPC. I learned how Route Tables determine network traffic flow, how Internet Gateways provide internet access to public resources, and how Security Groups act as virtual firewalls controlling inbound and outbound traffic.
-
 <h2>Skills Demonstrated</h2>
-
 <ul>
 <li>Amazon VPC Configuration</li>
 <li>Subnet Design</li>
