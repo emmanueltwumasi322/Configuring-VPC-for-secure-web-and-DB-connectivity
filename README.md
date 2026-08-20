@@ -1,4 +1,4 @@
-<h1>Configuring Amazon VPC Networking for Secure Web</h1>
+<h1>Configuring VPC Networking for Secure Web</h1>
 
 <h2>Description</h2>
 
